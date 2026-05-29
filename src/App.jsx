@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import { useFlag } from '@unleash/proxy-client-react';
 
@@ -48,7 +47,7 @@ function App() {
           </>
         ) : null}
 
-        {useFlag('MicrosoftSSO') ? (
+        {microsoftSSOEnabled ? (
           <MicrosoftLogin />
         ) : null}
       </div>
