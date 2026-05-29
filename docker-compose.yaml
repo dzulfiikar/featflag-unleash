@@ -1,0 +1,16 @@
+services:
+  featureflags-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: featureflags-unleash:local
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "5003:80"
+    networks:
+      - featureflags
+
+networks:
+  featureflags:
+    name: featureflags
